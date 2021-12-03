@@ -1,6 +1,7 @@
+# typed: false
 require 'spec_helper'
 
-RSpec.describe Product, type: :lib  do
+RSpec.describe Product, type: :lib do
   let!(:klass) do
     described_class.new(
       code: 'VS5',
@@ -15,14 +16,6 @@ RSpec.describe Product, type: :lib  do
   describe '#suggested_price_for' do
     it 'raises an error when the packs is empty' do
       klass.instance_variable_set(:@packs, [])
-
-      expect do
-        klass.suggested_price_for(1)
-      end.to raise_error(Product::InvalidInventory)
-    end
-
-    it 'raises an error when the packs is not an array' do
-      klass.instance_variable_set(:@packs, nil)
 
       expect do
         klass.suggested_price_for(1)

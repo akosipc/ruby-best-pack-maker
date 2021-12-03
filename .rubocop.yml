@@ -1,5 +1,6 @@
 require:
   - rubocop-rspec
+  - rubocop-sorbet
 
 AllCops:
   TargetRubyVersion: 3.0
@@ -43,4 +44,7 @@ RSpec/MultipleExpectations:
   Enabled: false
 
 RSpec/LetSetup:
+  Enabled: false
+
+Style/AccessorGrouping:
   Enabled: false

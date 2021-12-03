@@ -1,11 +1,12 @@
+# typed: false
 require 'spec_helper'
 
 RSpec.describe Pack, type: :lib do
-  let!(:klass) { described_class.new(price: 10, product_code: 'VS', quantity: 5) }
+  let!(:klass) { described_class.new(price: 10.00, product_code: 'VS', quantity: 5) }
 
   describe '#present' do
     it 'returns a formatted string for the class' do
-      expect(klass.present).to eq '5 x VS @ 10'
+      expect(klass.present).to eq '5 x VS @ 10.00'
     end
   end
 end
