@@ -7,6 +7,9 @@ module Interactions
       extend T::Sig
 
       sig { returns(Integer) }
+      attr_reader :weight
+
+      sig { returns(Integer) }
       attr_reader :dividend
 
       sig { returns(Integer) }
@@ -28,12 +31,12 @@ module Interactions
         if @permutations.any?
           @permutations.each { |_key, object| return false unless object.valid? }.any?
         else
-          @remainder == 0 && @permutations.length == 0
+          @remainder.zero? && @permutations.length.zero?
         end
       end
     end
 
-    sig { params(weights: T::Array[Integer], target: Integer).returns(T::Hash[T.untyped, T.untyped]) }
+    sig { params(weights: T::Array[Integer], target: Integer).returns(T::Hash[T.untyped, Permutation]) }
     def self.run!(weights:, target:)
       {}.tap do |hash|
         weights.each do |weight|

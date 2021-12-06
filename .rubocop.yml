@@ -48,3 +48,9 @@ RSpec/LetSetup:
 
 Style/AccessorGrouping:
   Enabled: false
+
+RSpec/ExampleLength:
+  Enabled: false
+
+RSpec/MultipleDescribes:
+  Enabled: false

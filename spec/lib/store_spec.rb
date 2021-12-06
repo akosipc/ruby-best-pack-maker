@@ -41,7 +41,6 @@ RSpec.describe Store, type: :lib do
         expect(output).to be_instance_of Order
         expect(output.order_items.length).to eq 1
         expect(output.order_items[0].quantity).to eq 2
-        expect(output.order_items[0].pack.product_code).to eq 'VS5'
         expect(output.order_items[0].pack.quantity).to eq 5
       end
     end
@@ -53,10 +52,8 @@ RSpec.describe Store, type: :lib do
         expect(output).to be_instance_of Order
         expect(output.order_items.length).to eq 2
         expect(output.order_items[0].quantity).to eq 2
-        expect(output.order_items[0].pack.product_code).to eq 'MB11'
         expect(output.order_items[0].pack.quantity).to eq 5
         expect(output.order_items[1].quantity).to eq 2
-        expect(output.order_items[1].pack.product_code).to eq 'MB11'
         expect(output.order_items[1].pack.quantity).to eq 2
       end
     end
@@ -68,11 +65,9 @@ RSpec.describe Store, type: :lib do
         expect(output).to be_instance_of Order
         expect(output.order_items.length).to eq 2
         expect(output.order_items[0].quantity).to eq 2
-        expect(output.order_items[0].pack.product_code).to eq 'CF'
         expect(output.order_items[0].pack.quantity).to eq 5
         expect(output.order_items[1].quantity).to eq 1
-        expect(output.order_items[1].pack.product_code).to eq 'CF'
-        expect(output.order_items[1].pack.quantity).to eq 1
+        expect(output.order_items[1].pack.quantity).to eq 3
       end
     end
 
