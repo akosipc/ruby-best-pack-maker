@@ -4,11 +4,11 @@ class OrderItem
 
   sig { returns(Pack) }
   attr_accessor :pack
-  
+
   sig { returns(Integer) }
   attr_accessor :quantity
 
-  sig { params( pack: Pack, quantity: Integer, options: T::Hash[T.untyped, T.untyped]).void } 
+  sig { params(pack: Pack, quantity: Integer, options: T::Hash[T.untyped, T.untyped]).void }
   def initialize(pack:, quantity:, **options)
     @pack = T.let(pack, Pack)
     @quantity = T.let(quantity, Integer)

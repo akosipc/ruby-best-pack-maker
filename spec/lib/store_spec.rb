@@ -45,7 +45,7 @@ RSpec.describe Store, type: :lib do
         expect(output.order_items[0].pack.quantity).to eq 5
       end
     end
-    
+
     context 'when the product_code is MB11 and quantity is 14' do
       it 'returns an order with order items for the packs' do
         output = store.buy('MB11', 14)
