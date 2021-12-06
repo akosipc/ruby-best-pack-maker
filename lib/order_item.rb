@@ -15,4 +15,9 @@ class OrderItem
 
     @options = T.let(options, T.nilable(T::Hash[T.untyped, T.untyped]))
   end
+
+  sig { returns(String) }
+  def present
+    "#{@quantity} - #{@pack.present}"
+  end
 end
