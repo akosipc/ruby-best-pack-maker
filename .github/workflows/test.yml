@@ -1,0 +1,22 @@
+name: Linters and Tests
+
+on: [push]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Set up Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: 2.7.5
+        bundler-cache: true
+
+    - name: Run Rubocop
+      run: bundle exec rubocop
+
+    - name: Run tests
+      run: bundle exec rspec
