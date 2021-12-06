@@ -28,9 +28,9 @@ class Product
     raise InvalidInventory, 'Inventory is not an array' unless packs.is_a? Array
     raise InvalidInventory, 'Inventory is currently empty' if packs.length.zero?
 
-    selected_pack = @packs.select do |pack|
+    selected_pack = @packs.detect do |pack|
       pack.quantity == quantity
-    end.first
+    end
 
     raise PackNotFound, "Inputted quantity does not have pack. Inputted was #{quantity}" if selected_pack.nil?
 
